@@ -6,7 +6,7 @@ Created on Fri Oct 30 21:37:34 2020
 @author: apple
 """
 
-import requests_with_caching
+import requests
 import json
 
 def get_movies_from_tastedive(search):
@@ -16,7 +16,7 @@ def get_movies_from_tastedive(search):
     param['type'] = 'movies'
     param['limit'] = 5
     
-    req = requests_with_caching.get(base_url, params = param)
+    req = requests.get(base_url, params = param)
     return json.loads(req.text)
 
 
@@ -38,7 +38,7 @@ def get_movie_data(title):
     param['t'] = title
     param['r'] = 'json'
     
-    req = requests_with_caching.get(base_url, params = param)
+    req = requests.get(base_url, params = param)
     
     return json.loads(req.text)
 
