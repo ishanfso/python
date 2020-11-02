@@ -6,7 +6,6 @@ Created on Mon Nov  2 16:13:06 2020
 @author: apple
 """
 
-# PASTE YOUR WOFPlayer CLASS (from part A) HERE
 class WOFPlayer:
     
     def __init__(self, name):
@@ -30,16 +29,12 @@ class WOFPlayer:
     
 
 
-# PASTE YOUR WOFHumanPlayer CLASS (from part B) HERE
-
 class WOFHumanPlayer(WOFPlayer):
     
     def getMove(self, category, obscuredPhrase, guessed):
         inp = input(self.name + " has $" + str(self.prizeMoney) + "\n" + "Category: " + category + "\n" + "Phrases: " + "\n" + str(obscuredPhrase) + "\n" + "Guessed: " + ''.join(guessed) + "\n" + "Guess a letter, phrase, or type 'exit' or 'pass':")
         return inp
-        
 
-# PASTE YOUR WOFComputerPlayer CLASS (from part C) HERE
 class WOFComputerPlayer(WOFPlayer):
     
     SORTED_FREQUENCIES = 'ZQXJKVBPYGFWMUCLDRHSNIOATE'
@@ -298,7 +293,6 @@ while True:
     playerIndex = (playerIndex + 1) % len(players)
 
 if winner:
-    # In your head, you should hear this as being announced by a game show host
     print('{} wins! The phrase was {}'.format(winner.name, phrase))
     print('{} won ${}'.format(winner.name, winner.prizeMoney))
     if len(winner.prizes) > 0:
